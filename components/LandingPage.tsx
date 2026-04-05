@@ -15,13 +15,48 @@ export default function FullBodyOrgasmCourseLandingPage() {
   ]
 
   const modules = [
-    ['01', 'Arrival', 'Settle your nervous system, release urgency, and create a safe internal starting point.'],
-    ['02', 'Awareness Activation', 'Shift from story into sensation with a guided body scan and present-moment tracking.'],
-    ['03', 'Breath Ignition', 'Use slow, intentional breath to expand capacity, soften holding, and awaken sensation.'],
-    ['04', 'Energy Awareness', 'Learn to notice subtle warmth, tingling, pulsing, and aliveness without chasing intensity.'],
-    ['05', 'Expansion', 'Let sensation spread through the body instead of collapsing into pressure or goal-seeking.'],
-    ['06', 'Circulation', 'Guide awareness through a simple energy pathway that supports fullness, calm, and integration.'],
-    ['07', 'Integration', 'Finish grounded, open, and connected to a more spacious experience of pleasure and self-trust.'],
+    {
+      num: '01',
+      title: 'Arrival',
+      text: 'Settle your nervous system, release urgency, and create a safe internal starting point.',
+      video: '/videos/module-01-arrival.mp4',
+    },
+    {
+      num: '02',
+      title: 'Awareness Activation',
+      text: 'Shift from story into sensation with a guided body scan and present-moment tracking.',
+      video: '/videos/module-02-awareness-activation.mp4',
+    },
+    {
+      num: '03',
+      title: 'Breath Ignition',
+      text: 'Use slow, intentional breath to expand capacity, soften holding, and awaken sensation.',
+      video: '/videos/module-03-breath-ignition.mp4',
+    },
+    {
+      num: '04',
+      title: 'Energy Awareness',
+      text: 'Learn to notice subtle warmth, tingling, pulsing, and aliveness without chasing intensity.',
+      video: '/videos/module-04-energy-awareness.mp4',
+    },
+    {
+      num: '05',
+      title: 'Expansion',
+      text: 'Let sensation spread through the body instead of collapsing into pressure or goal-seeking.',
+      video: '/videos/module-05-expansion.mp4',
+    },
+    {
+      num: '06',
+      title: 'Circulation',
+      text: 'Guide awareness through a simple energy pathway that supports fullness, calm, and integration.',
+      video: '/videos/module-06-circulation.mp4',
+    },
+    {
+      num: '07',
+      title: 'Integration',
+      text: 'Finish grounded, open, and connected to a more spacious experience of pleasure and self-trust.',
+      video: '/videos/module-07-integration.mp4',
+    },
   ]
 
   const testimonials = [
@@ -192,18 +227,32 @@ export default function FullBodyOrgasmCourseLandingPage() {
           </div>
 
           <div className="mt-10 grid gap-5 lg:grid-cols-2">
-            {modules.map(([num, title, text]) => (
+            {modules.map((module) => (
               <div
-                key={num}
+                key={module.num}
                 className="group rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 transition hover:border-[#BA804A]/40 hover:bg-white/[0.05]"
               >
+                <div className="mb-5 overflow-hidden rounded-2xl border border-[#BA804A]/25 bg-[#121212]">
+                  <div className="relative flex aspect-video items-center justify-center bg-gradient-to-br from-[#201810] to-[#0F0F0F]">
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(186,128,74,0.18),transparent_45%)]" />
+                    <div className="relative z-10 flex items-center gap-3 rounded-full border border-white/10 bg-black/30 px-4 py-2 text-xs uppercase tracking-[0.18em] text-[#D8A06B]">
+                      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-[#BA804A]/40 text-[10px]">
+                        ▶
+                      </span>
+                      Video placeholder · Module {module.num}
+                    </div>
+                  </div>
+                  <div className="border-t border-white/10 px-4 py-2 text-[11px] uppercase tracking-[0.14em] text-white/45">
+                    Upload file: {module.video}
+                  </div>
+                </div>
                 <div className="flex items-start gap-5">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#BA804A]/30 bg-[#1A1A1A] text-sm tracking-[0.18em] text-[#D8A06B]">
-                    {num}
+                    {module.num}
                   </div>
                   <div>
-                    <h3 className="text-xl font-medium text-[#F4EDE3]">{title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-white/70">{text}</p>
+                    <h3 className="text-xl font-medium text-[#F4EDE3]">{module.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-white/70">{module.text}</p>
                   </div>
                 </div>
               </div>

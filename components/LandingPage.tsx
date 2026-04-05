@@ -3,6 +3,7 @@
 import { FormEvent, useState } from 'react'
 
 export default function FullBodyOrgasmCourseLandingPage() {
+  const stripeCheckoutUrl = 'https://checkout.stripe.com/c/pay/REPLACE_WITH_YOUR_LINK'
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
@@ -324,14 +325,17 @@ export default function FullBodyOrgasmCourseLandingPage() {
               <div className="mt-2 text-3xl font-light text-[#F8F2EA]">$20</div>
               <p className="mt-4 text-sm leading-7 text-white/75">Get single-purchase access to Modules 2–7 only.</p>
               <a
-                href="#membership-info"
+                href={stripeCheckoutUrl}
                 className="mt-7 inline-flex rounded-full border border-[#BA804A]/55 bg-white/[0.03] px-6 py-3 text-sm font-medium text-[#F4EDE3] transition hover:border-[#BA804A] hover:bg-white/[0.06]"
+                target="_blank"
+                rel="noreferrer"
               >
-                Get Membership Details
+                Unlock Now
               </a>
               <p className="mt-4 text-xs uppercase tracking-[0.12em] text-white/45">
                 Single purchase for access to Modules 2–7 only
               </p>
+              <p className="mt-2 text-xs text-white/40">Stripe checkout URL can be swapped in later.</p>
             </div>
           </div>
 

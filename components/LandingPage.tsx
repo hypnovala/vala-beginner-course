@@ -117,7 +117,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
           <div>
             <div className="text-xs uppercase tracking-[0.32em] text-[#BA804A]">Brock Somatic Education</div>
-            <div className="mt-1 text-sm text-white/70">Full body Intro Orgasm Course</div>
+            <div className="mt-1 text-sm text-white/70">Full Body Intro Orgasm Course</div>
           </div>
           <a
             href="#membership-info"
@@ -132,7 +132,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
         <section className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pb-28 lg:pt-24">
           <div className="max-w-2xl">
             <div className="mb-6 inline-flex items-center rounded-full border border-[#BA804A]/30 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.26em] text-[#D8A06B]">
-              Guided somatic course · 35 minutes · Brock narrated
+              Guided somatic course · 35 minutes · Brock Avatar narrated
             </div>
             <h1 className="text-4xl font-light leading-tight text-[#F8F2EA] sm:text-5xl lg:text-6xl">
               From tension to expanded
@@ -177,7 +177,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
                 <div className="text-xs uppercase tracking-[0.3em] text-[#D8A06B]">Inside the experience</div>
                 <div className="mt-4 space-y-4">
                   {[
-                    'Calm Brock narration',
+                    'Calm Brock Avatar narration',
                     'Somatic awareness cues',
                     'Breath-led expansion',
                     'Energy circulation framework',
@@ -401,10 +401,10 @@ export default function FullBodyOrgasmCourseLandingPage() {
             <div className="text-center">
               <div className="text-xs uppercase tracking-[0.32em] text-[#D8A06B]">Membership details</div>
               <h2 className="mt-4 text-3xl font-light text-[#F8F2EA] sm:text-4xl">
-                Get full membership details and your first-month savings
+                Get Full Membership details and your first-month 40% off savings
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/72">
-                Enter your email to receive full membership information, including what is included monthly and how to
+                Enter your email to receive Full Membership information, including what is included monthly and how to
                 unlock Modules 2–7 in the way that fits you best.
               </p>
             </div>

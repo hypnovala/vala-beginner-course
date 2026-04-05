@@ -147,7 +147,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
         <section className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pb-28 lg:pt-24">
           <div className="max-w-2xl">
             <div className="mb-6 inline-flex items-center rounded-full border border-[#BA804A]/30 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.26em] text-[#D8A06B]">
-              Guided somatic course · 35 minutes · Brock narrated
+              Guided somatic course · 35 minutes · Brock Avatar narrated
             </div>
             <h1 className="text-4xl font-light leading-tight text-[#F8F2EA] sm:text-5xl lg:text-6xl">
               From tension to expanded
@@ -192,7 +192,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
                 <div className="text-xs uppercase tracking-[0.3em] text-[#D8A06B]">Inside the experience</div>
                 <div className="mt-4 space-y-4">
                   {[
-                    'Calm Brock narration',
+                    'Calm Brock Avatar narration',
                     'Somatic awareness cues',
                     'Breath-led expansion',
                     'Energy circulation framework',

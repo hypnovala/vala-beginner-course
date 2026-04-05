@@ -132,7 +132,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
           <div>
             <div className="text-xs uppercase tracking-[0.32em] text-[#BA804A]">Brock Somatic Education</div>
-            <div className="mt-1 text-sm text-white/70">Full body Intro Orgasm Course</div>
+            <div className="mt-1 text-sm text-white/70">Full Body Intro Orgasm Course</div>
           </div>
           <a
             href="#membership-info"

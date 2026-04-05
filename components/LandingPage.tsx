@@ -23,13 +23,13 @@ export default function FullBodyOrgasmCourseLandingPage() {
     },
     {
       num: '02',
-      title: 'Awareness Activation',
-      text: 'Shift from story into sensation with a guided body scan and present-moment tracking.',
+      title: 'Awareness',
+      text: 'Shift from story into sensation with guided body awareness and present-moment tracking.',
       video: '/videos/module-02-awareness-activation.mp4',
     },
     {
       num: '03',
-      title: 'Breath Ignition',
+      title: 'Breath',
       text: 'Use slow, intentional breath to expand capacity, soften holding, and awaken sensation.',
       video: '/videos/module-03-breath-ignition.mp4',
     },
@@ -103,7 +103,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
           <div>
             <div className="text-xs uppercase tracking-[0.32em] text-[#BA804A]">Brock Somatic Education</div>
-            <div className="mt-1 text-sm text-white/70">Full Body 35 Min Orgasm Course</div>
+            <div className="mt-1 text-sm text-white/70">Full body Intro Orgasm Course</div>
           </div>
           <a
             href="#join"
@@ -219,44 +219,112 @@ export default function FullBodyOrgasmCourseLandingPage() {
         </section>
 
         <section id="modules" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="max-w-2xl">
-            <div className="text-xs uppercase tracking-[0.3em] text-[#D8A06B]">Course breakdown</div>
+          <div className="max-w-3xl">
+            <div className="text-xs uppercase tracking-[0.3em] text-[#D8A06B]">Course experience</div>
             <h2 className="mt-4 text-3xl font-light text-[#F8F2EA] sm:text-4xl">
-              Seven guided modules. One elegant nervous-system-led experience.
+              Start with Module 1 now, then unlock the full guided journey.
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-5 lg:grid-cols-2">
-            {modules.map((module) => (
+          <div className="mt-10 rounded-[2rem] border border-[#BA804A]/25 bg-gradient-to-br from-[#1B1713] to-[#111111] p-6 sm:p-7">
+            <div className="mb-5 inline-flex items-center rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-2 text-[11px] uppercase tracking-[0.16em] text-emerald-200">
+              Module 1 · Free preview
+            </div>
+            <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="overflow-hidden rounded-2xl border border-[#BA804A]/25 bg-black">
+                <video className="aspect-video w-full bg-black" controls preload="metadata" playsInline>
+                  <source src={modules[0].video} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="flex flex-col justify-center">
+                <div className="text-xs uppercase tracking-[0.2em] text-[#D8A06B]">Now playing</div>
+                <h3 className="mt-3 text-2xl font-medium text-[#F8F2EA]">
+                  Module {modules[0].num}: {modules[0].title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-white/70">{modules[0].text}</p>
+                <div className="mt-6 text-xs uppercase tracking-[0.14em] text-white/45">Source: {modules[0].video}</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12">
+            <h3 className="text-2xl font-light text-[#F8F2EA] sm:text-3xl">Continue the Full Guided Experience</h3>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-white/72">
+              Module 1 introduces the foundation. Modules 2–7 guide you deeper into awareness, breath, expansion,
+              circulation, and integration.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {modules.slice(1).map((module) => (
               <div
                 key={module.num}
-                className="group rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 transition hover:border-[#BA804A]/40 hover:bg-white/[0.05]"
+                className="group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6"
               >
-                <div className="mb-5 overflow-hidden rounded-2xl border border-[#BA804A]/25 bg-[#121212]">
-                  <div className="relative flex aspect-video items-center justify-center bg-gradient-to-br from-[#201810] to-[#0F0F0F]">
-                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(186,128,74,0.18),transparent_45%)]" />
-                    <div className="relative z-10 flex items-center gap-3 rounded-full border border-white/10 bg-black/30 px-4 py-2 text-xs uppercase tracking-[0.18em] text-[#D8A06B]">
-                      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-[#BA804A]/40 text-[10px]">
-                        ▶
-                      </span>
-                      Video placeholder · Module {module.num}
-                    </div>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-black/70 via-black/35 to-black/75" />
+                <div className="pointer-events-none absolute inset-0 backdrop-blur-[1.5px]" />
+                <div className="relative z-10">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-[#BA804A]/40 bg-[#1A1A1A]/85 px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-[#D8A06B]">
+                    <span aria-hidden>🔒</span>
+                    Locked
                   </div>
-                  <div className="border-t border-white/10 px-4 py-2 text-[11px] uppercase tracking-[0.14em] text-white/45">
-                    Upload file: {module.video}
-                  </div>
-                </div>
-                <div className="flex items-start gap-5">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#BA804A]/30 bg-[#1A1A1A] text-sm tracking-[0.18em] text-[#D8A06B]">
-                    {module.num}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-medium text-[#F4EDE3]">{module.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-white/70">{module.text}</p>
-                  </div>
+                  <h4 className="mt-5 text-lg font-medium text-[#F4EDE3]">
+                    Module {module.num}: {module.title}
+                  </h4>
+                  <p className="mt-3 text-sm leading-7 text-white/65">{module.text}</p>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-14 grid gap-5 lg:grid-cols-2">
+            <div className="rounded-[1.75rem] border border-[#BA804A]/45 bg-gradient-to-br from-[#221A12] to-[#16120F] p-7 shadow-[0_18px_60px_rgba(0,0,0,0.35)]">
+              <div className="text-xs uppercase tracking-[0.22em] text-[#D8A06B]">Best value</div>
+              <h3 className="mt-4 text-2xl font-medium text-[#F8F2EA]">Join Membership</h3>
+              <div className="mt-2 text-3xl font-light text-[#F8F2EA]">$39/month</div>
+              <p className="mt-4 text-sm leading-7 text-white/75">
+                Unlock Modules 2–7 and receive ongoing monthly member benefits.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a
+                  href="#join"
+                  className="rounded-full bg-[#BA804A] px-6 py-3 text-sm font-medium text-[#111111] transition hover:brightness-110"
+                >
+                  Unlock with Membership
+                </a>
+                <a
+                  href="/membership-benefits"
+                  className="rounded-full border border-[#BA804A]/50 px-6 py-3 text-sm font-medium text-[#F4EDE3] transition hover:bg-[#BA804A]/12"
+                >
+                  View Monthly Benefits
+                </a>
+              </div>
+              <p className="mt-4 text-xs uppercase tracking-[0.12em] text-white/45">
+                Includes access to Modules 2–7 plus monthly member benefits
+              </p>
+            </div>
+
+            <div className="rounded-[1.75rem] border border-white/12 bg-[#151515] p-7">
+              <div className="text-xs uppercase tracking-[0.22em] text-white/55">Simple unlock</div>
+              <h3 className="mt-4 text-2xl font-medium text-[#F8F2EA]">One-Time Unlock</h3>
+              <div className="mt-2 text-3xl font-light text-[#F8F2EA]">$20</div>
+              <p className="mt-4 text-sm leading-7 text-white/75">Get single-purchase access to Modules 2–7 only.</p>
+              <a
+                href="#join"
+                className="mt-7 inline-flex rounded-full border border-[#BA804A]/55 bg-white/[0.03] px-6 py-3 text-sm font-medium text-[#F4EDE3] transition hover:border-[#BA804A] hover:bg-white/[0.06]"
+              >
+                Unlock Course Once
+              </a>
+              <p className="mt-4 text-xs uppercase tracking-[0.12em] text-white/45">
+                Single purchase for access to Modules 2–7 only
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.02] px-6 py-5 text-sm leading-7 text-white/72 sm:px-7">
+            Choose membership for full access plus ongoing benefits, or unlock the course once for a simple one-time
+            purchase.
           </div>
         </section>
 
@@ -346,7 +414,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
       <footer className="border-t border-white/8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-white/45 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div>© 2026 Brock Somatic Education</div>
-          <div>Full Body 35 Min Orgasm Course Landing Page</div>
+          <div>Full body Intro Orgasm Course Landing Page</div>
         </div>
       </footer>
     </div>

@@ -28,48 +28,63 @@ export default function FullBodyOrgasmCourseLandingPage() {
     },
   ]
 
+  const moduleLessons = [
+    { id: '1', title: 'Somatic Foundations', video: '' },
+    { id: '2', title: 'Sensual Guided Practice', video: '' },
+  ]
+
   const modules = [
     {
       num: '01',
       title: 'Arrival',
       text: 'Settle your nervous system, release urgency, and create a safe internal starting point.',
-      video: '/videos/module-01-arrival.mp4',
+      unlocked: true,
+      lessons: [
+        { ...moduleLessons[0], video: '/videos/module-01-arrival.mp4' },
+        { ...moduleLessons[1], video: '/videos/module-01-arrival.mp4' },
+      ],
     },
     {
       num: '02',
       title: 'Awareness',
       text: 'Shift from story into sensation with guided body awareness and present-moment tracking.',
-      video: '/videos/module-02-awareness-activation.mp4',
+      unlocked: false,
+      lessons: [{ ...moduleLessons[0] }, { ...moduleLessons[1] }],
     },
     {
       num: '03',
       title: 'Breath',
       text: 'Use slow, intentional breath to expand capacity, soften holding, and awaken sensation.',
-      video: '/videos/module-03-breath-ignition.mp4',
+      unlocked: false,
+      lessons: [{ ...moduleLessons[0] }, { ...moduleLessons[1] }],
     },
     {
       num: '04',
       title: 'Energy Awareness',
       text: 'Learn to notice subtle warmth, tingling, pulsing, and aliveness without chasing intensity.',
-      video: '/videos/module-04-energy-awareness.mp4',
+      unlocked: false,
+      lessons: [{ ...moduleLessons[0] }, { ...moduleLessons[1] }],
     },
     {
       num: '05',
       title: 'Expansion',
       text: 'Let sensation spread through the body instead of collapsing into pressure or goal-seeking.',
-      video: '/videos/module-05-expansion.mp4',
+      unlocked: false,
+      lessons: [{ ...moduleLessons[0] }, { ...moduleLessons[1] }],
     },
     {
       num: '06',
       title: 'Circulation',
       text: 'Guide awareness through a simple energy pathway that supports fullness, calm, and integration.',
-      video: '/videos/module-06-circulation.mp4',
+      unlocked: false,
+      lessons: [{ ...moduleLessons[0] }, { ...moduleLessons[1] }],
     },
     {
       num: '07',
       title: 'Integration',
       text: 'Finish grounded, open, and connected to a more spacious experience of pleasure and self-trust.',
-      video: '/videos/module-07-integration.mp4',
+      unlocked: false,
+      lessons: [{ ...moduleLessons[0] }, { ...moduleLessons[1] }],
     },
   ]
 
@@ -117,7 +132,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
           <div>
             <div className="text-xs uppercase tracking-[0.32em] text-[#BA804A]">Brock Somatic Education</div>
-            <div className="mt-1 text-sm text-white/70">Full Body Intro Orgasm Course</div>
+            <div className="mt-1 text-sm text-white/70">Full body Intro Orgasm Course</div>
           </div>
           <a
             href="#membership-info"
@@ -242,12 +257,12 @@ export default function FullBodyOrgasmCourseLandingPage() {
 
           <div className="mt-10 rounded-[2rem] border border-[#BA804A]/25 bg-gradient-to-br from-[#1B1713] to-[#111111] p-6 sm:p-7">
             <div className="mb-5 inline-flex items-center rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-2 text-[11px] uppercase tracking-[0.16em] text-emerald-200">
-              Module 1 · Free preview
+              Module 1 · Unlocked · 2 lessons available
             </div>
             <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
               <div className="overflow-hidden rounded-2xl border border-[#BA804A]/25 bg-black">
                 <video className="aspect-video w-full bg-black" controls preload="metadata" playsInline>
-                  <source src={modules[0].video} type="video/mp4" />
+                  <source src={modules[0].lessons[0].video} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -257,7 +272,22 @@ export default function FullBodyOrgasmCourseLandingPage() {
                   Module {modules[0].num}: {modules[0].title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-white/70">{modules[0].text}</p>
-                <div className="mt-6 text-xs uppercase tracking-[0.14em] text-white/45">Source: {modules[0].video}</div>
+                <p className="mt-4 text-xs uppercase tracking-[0.12em] text-white/45">
+                  This module includes 2 lessons available now
+                </p>
+                <div className="mt-6 space-y-2">
+                  {modules[0].lessons.map((lesson, index) => (
+                    <div
+                      key={lesson.id}
+                      className="flex items-center justify-between rounded-xl border border-emerald-300/20 bg-emerald-300/10 px-4 py-2 text-xs text-emerald-100"
+                    >
+                      <span>
+                        Video {index + 1}: {lesson.title}
+                      </span>
+                      <span className="uppercase tracking-[0.12em]">Available</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -271,7 +301,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
           </div>
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {modules.slice(1).map((module) => (
+            {modules.filter((module) => !module.unlocked).map((module) => (
               <div
                 key={module.num}
                 className="group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6"
@@ -287,6 +317,17 @@ export default function FullBodyOrgasmCourseLandingPage() {
                     Module {module.num}: {module.title}
                   </h4>
                   <p className="mt-3 text-sm leading-7 text-white/65">{module.text}</p>
+                  <div className="mt-4 space-y-2">
+                    {module.lessons.map((lesson, index) => (
+                      <div
+                        key={lesson.id}
+                        className="rounded-xl border border-white/10 bg-black/25 px-3 py-2 text-xs text-white/70"
+                      >
+                        Video {index + 1}: {lesson.title}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 text-xs uppercase tracking-[0.12em] text-white/45">Status: Locked</div>
                 </div>
               </div>
             ))}
@@ -401,10 +442,10 @@ export default function FullBodyOrgasmCourseLandingPage() {
             <div className="text-center">
               <div className="text-xs uppercase tracking-[0.32em] text-[#D8A06B]">Membership details</div>
               <h2 className="mt-4 text-3xl font-light text-[#F8F2EA] sm:text-4xl">
-                Get Full Membership details and your first-month 40% off savings
+                Get full membership details and your first-month savings
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/72">
-                Enter your email to receive Full Membership information, including what is included monthly and how to
+                Enter your email to receive full membership information, including what is included monthly and how to
                 unlock Modules 2–7 in the way that fits you best.
               </p>
             </div>

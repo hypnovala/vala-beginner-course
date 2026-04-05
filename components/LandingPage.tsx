@@ -233,17 +233,17 @@ export default function FullBodyOrgasmCourseLandingPage() {
                 className="group rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 transition hover:border-[#BA804A]/40 hover:bg-white/[0.05]"
               >
                 <div className="mb-5 overflow-hidden rounded-2xl border border-[#BA804A]/25 bg-[#121212]">
-                  <div className="relative flex aspect-video items-center justify-center bg-gradient-to-br from-[#201810] to-[#0F0F0F]">
-                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(186,128,74,0.18),transparent_45%)]" />
-                    <div className="relative z-10 flex items-center gap-3 rounded-full border border-white/10 bg-black/30 px-4 py-2 text-xs uppercase tracking-[0.18em] text-[#D8A06B]">
-                      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-[#BA804A]/40 text-[10px]">
-                        ▶
-                      </span>
-                      Video placeholder · Module {module.num}
-                    </div>
-                  </div>
+                  <video
+                    className="aspect-video w-full bg-black"
+                    controls
+                    preload="metadata"
+                    playsInline
+                  >
+                    <source src={module.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                   <div className="border-t border-white/10 px-4 py-2 text-[11px] uppercase tracking-[0.14em] text-white/45">
-                    Upload file: {module.video}
+                    Source: {module.video}
                   </div>
                 </div>
                 <div className="flex items-start gap-5">

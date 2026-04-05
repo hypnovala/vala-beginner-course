@@ -1,4 +1,17 @@
+'use client'
+
+import { FormEvent, useState } from 'react'
+
 export default function FullBodyOrgasmCourseLandingPage() {
+  const [email, setEmail] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleMembershipSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    if (!email.trim()) return
+    setSubmitted(true)
+  }
+
   const sections = [
     {
       title: 'Release pressure',
@@ -106,10 +119,10 @@ export default function FullBodyOrgasmCourseLandingPage() {
             <div className="mt-1 text-sm text-white/70">Full body Intro Orgasm Course</div>
           </div>
           <a
-            href="#join"
+            href="#membership-info"
             className="rounded-full border border-[#BA804A]/60 px-5 py-2 text-sm font-medium text-[#F4EDE3] transition hover:bg-[#BA804A] hover:text-[#111111]"
           >
-            Join the Waitlist
+            Get Membership Details
           </a>
         </div>
       </header>
@@ -131,10 +144,10 @@ export default function FullBodyOrgasmCourseLandingPage() {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
-                href="#join"
+                href="#membership-info"
                 className="rounded-full bg-[#BA804A] px-7 py-3 text-center text-sm font-semibold text-[#111111] transition hover:opacity-90"
               >
-                Get Early Access
+                Get Membership Details
               </a>
               <a
                 href="#modules"
@@ -288,16 +301,16 @@ export default function FullBodyOrgasmCourseLandingPage() {
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
-                  href="#join"
+                  href="#membership-info"
                   className="rounded-full bg-[#BA804A] px-6 py-3 text-sm font-medium text-[#111111] transition hover:brightness-110"
                 >
-                  Unlock with Membership
+                  Get Membership Details
                 </a>
                 <a
-                  href="/membership-benefits"
+                  href="#membership-info"
                   className="rounded-full border border-[#BA804A]/50 px-6 py-3 text-sm font-medium text-[#F4EDE3] transition hover:bg-[#BA804A]/12"
                 >
-                  View Monthly Benefits
+                  See Member Benefits
                 </a>
               </div>
               <p className="mt-4 text-xs uppercase tracking-[0.12em] text-white/45">
@@ -311,10 +324,10 @@ export default function FullBodyOrgasmCourseLandingPage() {
               <div className="mt-2 text-3xl font-light text-[#F8F2EA]">$20</div>
               <p className="mt-4 text-sm leading-7 text-white/75">Get single-purchase access to Modules 2–7 only.</p>
               <a
-                href="#join"
+                href="#membership-info"
                 className="mt-7 inline-flex rounded-full border border-[#BA804A]/55 bg-white/[0.03] px-6 py-3 text-sm font-medium text-[#F4EDE3] transition hover:border-[#BA804A] hover:bg-white/[0.06]"
               >
-                Unlock Course Once
+                Get Membership Details
               </a>
               <p className="mt-4 text-xs uppercase tracking-[0.12em] text-white/45">
                 Single purchase for access to Modules 2–7 only
@@ -379,33 +392,45 @@ export default function FullBodyOrgasmCourseLandingPage() {
           </div>
         </section>
 
-        <section id="join" className="mx-auto max-w-4xl px-6 py-20 lg:px-8">
+        <section id="membership-info" className="mx-auto max-w-4xl px-6 py-20 lg:px-8">
           <div className="rounded-[2rem] border border-[#BA804A]/20 bg-gradient-to-br from-[#1A1714] to-[#121212] p-8 shadow-[0_20px_80px_rgba(0,0,0,0.35)] sm:p-10">
             <div className="text-center">
-              <div className="text-xs uppercase tracking-[0.32em] text-[#D8A06B]">Early access</div>
-              <h2 className="mt-4 text-3xl font-light text-[#F8F2EA] sm:text-4xl">Join the waitlist for the full course release</h2>
+              <div className="text-xs uppercase tracking-[0.32em] text-[#D8A06B]">Membership details</div>
+              <h2 className="mt-4 text-3xl font-light text-[#F8F2EA] sm:text-4xl">
+                Get full membership details and your first-month savings
+              </h2>
               <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/72">
-                Be first to know when the Brock-narrated course goes live, and get updates on the larger somatic
-                education experience around breath, embodiment, and expanded sensation.
+                Enter your email to receive full membership information, including what is included monthly and how to
+                unlock Modules 2–7 in the way that fits you best.
               </p>
             </div>
 
-            <form className="mx-auto mt-10 grid max-w-2xl gap-4 sm:grid-cols-[1fr_auto]">
+            <form onSubmit={handleMembershipSubmit} className="mx-auto mt-10 grid max-w-2xl gap-4 sm:grid-cols-[1fr_auto]">
               <input
                 type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
                 placeholder="Enter your email"
+                required
                 className="h-14 rounded-full border border-white/10 bg-[#0F0F0F] px-6 text-sm text-[#F4EDE3] outline-none placeholder:text-white/35 focus:border-[#BA804A]/60"
               />
               <button
-                type="button"
+                type="submit"
                 className="h-14 rounded-full bg-[#BA804A] px-8 text-sm font-semibold text-[#111111] transition hover:opacity-90"
               >
-                Join the Waitlist
+                Send Membership Details
               </button>
             </form>
 
+            {submitted && (
+              <div className="mx-auto mt-5 max-w-2xl rounded-2xl border border-emerald-300/30 bg-emerald-300/10 px-5 py-4 text-center text-sm text-emerald-100">
+                Thanks—membership details are on the way. You’ll also receive a <strong>40% off coupon</strong> for
+                your first month.
+              </div>
+            )}
+
             <div className="mt-6 text-center text-xs uppercase tracking-[0.2em] text-white/45">
-              Educational · somatic · elegant · grounded
+              Premium guidance · calm support · somatic depth
             </div>
           </div>
         </section>

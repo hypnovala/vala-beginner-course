@@ -39,7 +39,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
       title: 'Arrival',
       text: 'Settle your nervous system, release urgency, and create a safe internal starting point.',
       unlocked: true,
-      embedUrl: 'https://www.youtube.com/embed/REPLACE_WITH_MODULE_01_VIDEO_ID',
+      embedUrl: 'https://hypnoticdreamtv.com/wp-content/uploads/2026/01/Gamerpinkdildo_01.mp4',
       lessons: [
         { ...moduleLessons[0] },
         { ...moduleLessons[1] },

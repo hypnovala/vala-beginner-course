@@ -29,8 +29,8 @@ export default function FullBodyOrgasmCourseLandingPage() {
   ]
 
   const moduleLessons = [
-    { id: '1', title: 'Somatic Foundations', video: '' },
-    { id: '2', title: 'Sensual Guided Practice', video: '' },
+    { id: '1', title: 'Somatic Foundations' },
+    { id: '2', title: 'Sensual Guided Practice' },
   ]
 
   const modules = [
@@ -39,9 +39,10 @@ export default function FullBodyOrgasmCourseLandingPage() {
       title: 'Arrival',
       text: 'Settle your nervous system, release urgency, and create a safe internal starting point.',
       unlocked: true,
+      embedUrl: 'https://www.youtube.com/embed/REPLACE_WITH_MODULE_01_VIDEO_ID',
       lessons: [
-        { ...moduleLessons[0], video: '/videos/module-01-arrival.mp4' },
-        { ...moduleLessons[1], video: '/videos/module-01-arrival.mp4' },
+        { ...moduleLessons[0] },
+        { ...moduleLessons[1] },
       ],
     },
     {
@@ -261,10 +262,15 @@ export default function FullBodyOrgasmCourseLandingPage() {
             </div>
             <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
               <div className="overflow-hidden rounded-2xl border border-[#BA804A]/25 bg-black">
-                <video className="aspect-video w-full bg-black" controls preload="metadata" playsInline>
-                  <source src={modules[0].lessons[0].video} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <iframe
+                  className="aspect-video w-full bg-black"
+                  src={modules[0].embedUrl}
+                  title="Module 01 - Arrival"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
               </div>
               <div className="flex flex-col justify-center">
                 <div className="text-xs uppercase tracking-[0.2em] text-[#D8A06B]">Now playing</div>

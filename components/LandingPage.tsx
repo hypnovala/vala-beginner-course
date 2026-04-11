@@ -1,40 +1,7 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
-
 export default function FullBodyOrgasmCourseLandingPage() {
   const stripeCheckoutUrl = 'https://checkout.stripe.com/c/pay/REPLACE_WITH_YOUR_LINK'
-  const [email, setEmail] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleMembershipSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-
-    if (!email.trim()) return
-
-    setIsSubmitting(true)
-    setSubmitted(false)
-
-    try {
-      const response = await fetch('/api/waitlist', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      })
-
-      if (!response.ok) {
-        return
-      }
-
-      setSubmitted(true)
-      setEmail('')
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
   const sections = [
     {
@@ -362,57 +329,6 @@ export default function FullBodyOrgasmCourseLandingPage() {
             ))}
           </div>
 
-          <div className="mt-14 grid gap-5 lg:grid-cols-2">
-            <div className="rounded-[1.75rem] border border-[#BA804A]/45 bg-gradient-to-br from-[#221A12] to-[#16120F] p-7 shadow-[0_18px_60px_rgba(0,0,0,0.35)]">
-              <div className="text-xs uppercase tracking-[0.22em] text-[#D8A06B]">Best value</div>
-              <h3 className="mt-4 text-2xl font-medium text-[#F8F2EA]">Join Membership</h3>
-              <div className="mt-2 text-3xl font-light text-[#F8F2EA]">$39/month</div>
-              <p className="mt-4 text-sm leading-7 text-white/75">
-                Unlock Modules 2–7 and receive ongoing monthly member benefits.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <a
-                  href="https://fbo-membership.vercel.app"
-                  className="rounded-full bg-[#BA804A] px-6 py-3 text-sm font-medium text-[#111111] transition hover:brightness-110"
-                >
-                  Get Membership Details
-                </a>
-                <a
-                  href="#membership-info"
-                  className="rounded-full border border-[#BA804A]/50 px-6 py-3 text-sm font-medium text-[#F4EDE3] transition hover:bg-[#BA804A]/12"
-                >
-                  See Member Benefits
-                </a>
-              </div>
-              <p className="mt-4 text-xs uppercase tracking-[0.12em] text-white/45">
-                Includes access to Modules 2–7 plus monthly member benefits
-              </p>
-            </div>
-
-            <div className="rounded-[1.75rem] border border-white/12 bg-[#151515] p-7">
-              <div className="text-xs uppercase tracking-[0.22em] text-white/55">Simple unlock</div>
-              <h3 className="mt-4 text-2xl font-medium text-[#F8F2EA]">One-Time Unlock</h3>
-              <div className="mt-2 text-3xl font-light text-[#F8F2EA]">$20</div>
-              <p className="mt-4 text-sm leading-7 text-white/75">Get single-purchase access to Modules 2–7 only.</p>
-              <a
-                href={stripeCheckoutUrl}
-                className="mt-7 inline-flex rounded-full border border-[#BA804A]/55 bg-white/[0.03] px-6 py-3 text-sm font-medium text-[#F4EDE3] transition hover:border-[#BA804A] hover:bg-white/[0.06]"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Unlock Now
-              </a>
-              <p className="mt-4 text-xs uppercase tracking-[0.12em] text-white/45">
-                Single purchase for access to Modules 2–7 only
-              </p>
-              <p className="mt-2 text-xs text-white/40">Stripe checkout URL can be swapped in later.</p>
-            </div>
-          </div>
-
-          <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.02] px-6 py-5 text-sm leading-7 text-white/72 sm:px-7">
-            Choose membership for full access plus ongoing benefits, or unlock the course once for a simple one-time
-            purchase.
-          </div>
         </section>
 
         <section className="border-y border-white/8 bg-gradient-to-b from-[#181614] to-[#111111]">
@@ -466,46 +382,51 @@ export default function FullBodyOrgasmCourseLandingPage() {
           </div>
         </section>
 
-        <section id="membership-info" className="mx-auto max-w-4xl px-6 py-20 lg:px-8">
-          <div className="rounded-[2rem] border border-[#BA804A]/20 bg-gradient-to-br from-[#1A1714] to-[#121212] p-8 shadow-[0_20px_80px_rgba(0,0,0,0.35)] sm:p-10">
-            <div className="text-center">
-              <div className="text-xs uppercase tracking-[0.32em] text-[#D8A06B]">Membership details</div>
-              <h2 className="mt-4 text-3xl font-light text-[#F8F2EA] sm:text-4xl">
-                Get full membership details and your first-month savings
-              </h2>
-              <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/72">
-                Enter your email to receive full membership information, including what is included monthly and how to
-                unlock Modules 2–7 in the way that fits you best.
+        <section id="membership-info" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="grid gap-5 lg:grid-cols-2">
+            <div className="rounded-[1.75rem] border border-[#BA804A]/45 bg-gradient-to-br from-[#221A12] to-[#16120F] p-7 shadow-[0_18px_60px_rgba(0,0,0,0.35)]">
+              <div className="text-xs uppercase tracking-[0.22em] text-[#D8A06B]">Best value</div>
+              <h3 className="mt-4 text-2xl font-medium text-[#F8F2EA]">Join Membership</h3>
+              <div className="mt-2 text-3xl font-light text-[#F8F2EA]">$39/month</div>
+              <p className="mt-4 text-sm leading-7 text-white/75">
+                Unlock Modules 2–7 and receive ongoing monthly member benefits.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a
+                  href="https://fbo-membership.vercel.app"
+                  className="rounded-full bg-[#BA804A] px-6 py-3 text-sm font-medium text-[#111111] transition hover:brightness-110"
+                >
+                  Get Membership Details
+                </a>
+              </div>
+              <p className="mt-4 text-xs uppercase tracking-[0.12em] text-white/45">
+                Includes access to Modules 2–7 plus monthly member benefits
               </p>
             </div>
 
-            <form onSubmit={handleMembershipSubmit} className="mx-auto mt-10 grid max-w-2xl gap-4 sm:grid-cols-[1fr_auto]">
-              <input
-                type="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder="Enter your email"
-                required
-                className="h-14 rounded-full border border-white/10 bg-[#0F0F0F] px-6 text-sm text-[#F4EDE3] outline-none placeholder:text-white/35 focus:border-[#BA804A]/60"
-              />
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="h-14 rounded-full bg-[#BA804A] px-8 text-sm font-semibold text-[#111111] transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
+            <div className="rounded-[1.75rem] border border-white/12 bg-[#151515] p-7">
+              <div className="text-xs uppercase tracking-[0.22em] text-white/55">Simple unlock</div>
+              <h3 className="mt-4 text-2xl font-medium text-[#F8F2EA]">One-Time Unlock</h3>
+              <div className="mt-2 text-3xl font-light text-[#F8F2EA]">$20</div>
+              <p className="mt-4 text-sm leading-7 text-white/75">Get single-purchase access to Modules 2–7 only.</p>
+              <a
+                href={stripeCheckoutUrl}
+                className="mt-7 inline-flex rounded-full border border-[#BA804A]/55 bg-white/[0.03] px-6 py-3 text-sm font-medium text-[#F4EDE3] transition hover:border-[#BA804A] hover:bg-white/[0.06]"
+                target="_blank"
+                rel="noreferrer"
               >
-                {isSubmitting ? 'Sending...' : 'Send Membership Details'}
-              </button>
-            </form>
-
-            {submitted && (
-              <div className="mx-auto mt-5 max-w-2xl rounded-2xl border border-emerald-300/30 bg-emerald-300/10 px-5 py-4 text-center text-sm text-emerald-100">
-                Check your email for access
-              </div>
-            )}
-
-            <div className="mt-6 text-center text-xs uppercase tracking-[0.2em] text-white/45">
-              Premium guidance · calm support · somatic depth
+                Unlock Now
+              </a>
+              <p className="mt-4 text-xs uppercase tracking-[0.12em] text-white/45">
+                Single purchase for access to Modules 2–7 only
+              </p>
+              <p className="mt-2 text-xs text-white/40">Stripe checkout URL can be swapped in later.</p>
             </div>
+          </div>
+
+          <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.02] px-6 py-5 text-sm leading-7 text-white/72 sm:px-7">
+            Choose membership for full access plus ongoing benefits, or unlock the course once for a simple one-time
+            purchase.
           </div>
         </section>
       </main>

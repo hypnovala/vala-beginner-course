@@ -6,11 +6,34 @@ export default function FullBodyOrgasmCourseLandingPage() {
   const stripeCheckoutUrl = 'https://checkout.stripe.com/c/pay/REPLACE_WITH_YOUR_LINK'
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleMembershipSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleMembershipSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+
     if (!email.trim()) return
-    setSubmitted(true)
+
+    setIsSubmitting(true)
+    setSubmitted(false)
+
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      if (!response.ok) {
+        return
+      }
+
+      setSubmitted(true)
+      setEmail('')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const sections = [
@@ -467,16 +490,16 @@ export default function FullBodyOrgasmCourseLandingPage() {
               />
               <button
                 type="submit"
-                className="h-14 rounded-full bg-[#BA804A] px-8 text-sm font-semibold text-[#111111] transition hover:opacity-90"
+                disabled={isSubmitting}
+                className="h-14 rounded-full bg-[#BA804A] px-8 text-sm font-semibold text-[#111111] transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
               >
-                Send Membership Details
+                {isSubmitting ? 'Sending...' : 'Send Membership Details'}
               </button>
             </form>
 
             {submitted && (
               <div className="mx-auto mt-5 max-w-2xl rounded-2xl border border-emerald-300/30 bg-emerald-300/10 px-5 py-4 text-center text-sm text-emerald-100">
-                Thanks—membership details are on the way. You’ll also receive a <strong>40% off coupon</strong> for
-                your first month.
+                Check your email for access
               </div>
             )}
 

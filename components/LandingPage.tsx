@@ -398,12 +398,6 @@ export default function FullBodyOrgasmCourseLandingPage() {
                 >
                   Get Membership Details
                 </a>
-                <a
-                  href="#membership-info"
-                  className="rounded-full border border-[#BA804A]/50 px-6 py-3 text-sm font-medium text-[#F4EDE3] transition hover:bg-[#BA804A]/12"
-                >
-                  See Member Benefits
-                </a>
               </div>
               <p className="mt-4 text-xs uppercase tracking-[0.12em] text-white/45">
                 Includes access to Modules 2–7 plus monthly member benefits

@@ -1,6 +1,9 @@
 'use client'
 
+import { useState } from 'react'
+
 export default function FullBodyOrgasmCourseLandingPage() {
+  const [open, setOpen] = useState(false)
   const stripeCheckoutUrl = 'https://checkout.stripe.com/c/pay/REPLACE_WITH_YOUR_LINK'
 
   const sections = [
@@ -272,17 +275,20 @@ export default function FullBodyOrgasmCourseLandingPage() {
                   This module includes 2 lessons available now
                 </p>
                 <div className="mt-6 space-y-2">
-                  {modules[0].lessons.map((lesson, index) => (
-                    <div
-                      key={lesson.id}
-                      className="flex items-center justify-between rounded-xl border border-emerald-300/20 bg-emerald-300/10 px-4 py-2 text-xs text-emerald-100"
-                    >
-                      <span>
-                        Video {index + 1}: {lesson.title}
-                      </span>
-                      <span className="uppercase tracking-[0.12em]">Available</span>
-                    </div>
-                  ))}
+                  <>
+                  <div className="flex items-center justify-between rounded-xl border border-emerald-300/20 bg-emerald-300/10 px-4 py-2 text-xs text-emerald-100">
+                    <span>Video 1: {modules[0].lessons[0].title}</span>
+                    <span className="uppercase tracking-[0.12em]">Available</span>
+                  </div>
+
+                  <div
+                    onClick={() => setOpen(true)}
+                    className="flex cursor-pointer items-center justify-between rounded-xl border border-emerald-300/20 bg-gradient-to-r from-emerald-900/20 to-black px-4 py-2 text-xs text-emerald-100 transition hover:shadow-[0_0_15px_rgba(16,185,129,0.25)]"
+                  >
+                    <span>Audio: {modules[0].lessons[1].title}</span>
+                    <span className="uppercase tracking-[0.12em]">Play</span>
+                  </div>
+                </>
                 </div>
               </div>
             </div>
@@ -429,6 +435,26 @@ export default function FullBodyOrgasmCourseLandingPage() {
             purchase.
           </div>
         </section>
+      
+        {open && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+            <div className="w-[90%] max-w-md rounded-3xl border border-emerald-700/40 bg-black p-6 shadow-2xl">
+              <h2 className="mb-4 text-xl text-white">Sensual Guided Practice</h2>
+
+              <audio controls autoPlay className="w-full">
+                <source src="/module01_guide.mp3" type="audio/mpeg" />
+              </audio>
+
+              <button
+                onClick={() => setOpen(false)}
+                className="mt-6 w-full rounded-xl bg-emerald-700 py-3 text-white transition hover:bg-emerald-600"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
+
       </main>
 
       <footer className="border-t border-white/8">

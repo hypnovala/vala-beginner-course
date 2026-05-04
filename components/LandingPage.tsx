@@ -391,11 +391,14 @@ export default function FullBodyOrgasmCourseLandingPage() {
         <section id="membership-info" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="grid gap-5 lg:grid-cols-2">
             <div className="rounded-[1.75rem] border border-[#BA804A]/45 bg-gradient-to-br from-[#221A12] to-[#16120F] p-7 shadow-[0_18px_60px_rgba(0,0,0,0.35)]">
-              <div className="text-xs uppercase tracking-[0.22em] text-[#D8A06B]">Best value</div>
+              <div className="text-xs uppercase tracking-[0.22em] text-[#D8A06B]">BEST VALUE</div>
               <h3 className="mt-4 text-2xl font-medium text-[#F8F2EA]">Join Membership</h3>
               <div className="mt-2 text-3xl font-light text-[#F8F2EA]">$39/month</div>
               <p className="mt-4 text-sm leading-7 text-white/75">
-                Unlock Modules 2–7 and receive ongoing monthly member benefits.
+                Unlock Modules 2–7, ongoing monthly member benefits, and for a limited time receive the 35-Minute Full Body Orgasm Course at no additional cost.
+              </p>
+              <p className="mt-3 rounded-xl border border-[#BA804A]/45 bg-[#BA804A]/12 px-4 py-2 text-xs font-medium uppercase tracking-[0.08em] text-[#E6B07C]">
+                LIMITED TIME BONUS: 35-Minute Full Body Orgasm Course included — $59 value.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
@@ -406,7 +409,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
                 </a>
               </div>
               <p className="mt-4 text-xs uppercase tracking-[0.12em] text-white/45">
-                Includes access to Modules 2–7 plus monthly member benefits
+                INCLUDES MODULES 2–7 + MONTHLY MEMBER BENEFITS + $59 COURSE BONUS
               </p>
             </div>
 
@@ -431,8 +434,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
           </div>
 
           <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.02] px-6 py-5 text-sm leading-7 text-white/72 sm:px-7">
-            Choose membership for full access plus ongoing benefits, or unlock the course once for a simple one-time
-            purchase.
+            Choose membership for full access, ongoing benefits, and the limited-time $59 course bonus — or unlock Modules 2–7 once with a simple one-time purchase.
           </div>
         </section>
       

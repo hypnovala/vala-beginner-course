@@ -129,7 +129,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
             <div className="mt-1 text-sm text-white/70">Full Body Intro Orgasm Course</div>
           </div>
           <a
-            href="https://fbo-membership.vercel.app"
+            href="https://course.brockjohn.com/"
             className="rounded-full border border-[#BA804A]/60 px-5 py-2 text-sm font-medium text-[#F4EDE3] transition hover:bg-[#BA804A] hover:text-[#111111]"
           >
             Get Membership Details
@@ -154,7 +154,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
-                href="https://fbo-membership.vercel.app"
+                href="https://course.brockjohn.com/"
                 className="rounded-full bg-[#BA804A] px-7 py-3 text-center text-sm font-semibold text-[#111111] transition hover:opacity-90"
               >
                 Get Membership Details
@@ -399,7 +399,7 @@ export default function FullBodyOrgasmCourseLandingPage() {
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
-                  href="https://fbo-membership.vercel.app"
+                  href="https://course.brockjohn.com/"
                   className="rounded-full bg-[#BA804A] px-6 py-3 text-sm font-medium text-[#111111] transition hover:brightness-110"
                 >
                   Get Membership Details
